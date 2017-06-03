@@ -1,0 +1,7 @@
+// BuckleScript config file, comments and trailing commas supported
+{
+    "name": "reason-react-playground",
+    "sources": {
+        "dir": "src"
+    }
+}

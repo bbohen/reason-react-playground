@@ -1,0 +1,16 @@
+{
+  "name": "reason-react-playground",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "bsb",
+    "build:watch": "bsb -w"
+  },
+  "author": "Brad Bohen",
+  "license": "ISC",
+  "devDependencies": {
+    "bs-platform": "^1.7.4"
+  },
+  "dependencies": {}
+}
