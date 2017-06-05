@@ -1,2 +1,2 @@
-let() =
-    print_endline "Hello World!"
+/* LEFT OFF WORKING ON THIS*/
+ReactDOMRe.renderToElementWithId <App /> "index"

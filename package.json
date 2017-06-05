@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "bsb",
-    "build:watch": "bsb -w"
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "bundle": "webpack -w"
   },
   "author": "Brad Bohen",
   "license": "ISC",
   "devDependencies": {
-    "bs-platform": "^1.7.4"
+    "bs-platform": "^1.7.4",
+    "webpack": "^2.6.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "reason-react": "^0.1.3"
+  }
 }
