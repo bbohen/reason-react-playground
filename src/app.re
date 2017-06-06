@@ -1,11 +1,25 @@
 module App = {
     include ReactRe.Component;
-    type props = unit;
-    let name = "The App";
-    let render _componentBag =>
-        <div> (ReactRe.stringToElement "Hello World!") </div>;
+    type props = {
+        greeting: string
+    };
+    let name = "App";
+    let items = [
+        "hello",
+        "there",
+        "world"
+    ];
+    let render {props} =>
+        <div>
+            <p>(ReactRe.stringToElement props.greeting)</p>
+            <input
+                _type="text"
+                placeholder="test"
+            />
+            <ItemList items={items} />
+        </div>;
 };
 
 include ReactRe.CreateComponent App;
 
-let createElement = wrapProps ();
+let createElement ::greeting => wrapProps {greeting: greeting};
