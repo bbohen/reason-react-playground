@@ -5,7 +5,7 @@ module TodoList = {
   };
   let name = "TodoList";
   let render {props} => {
-    let items = 
+    let items =
       props.items |>
       List.map (
         fun item =>
