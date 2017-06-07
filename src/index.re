@@ -1,1 +1,1 @@
-ReactDOMRe.renderToElementWithId <App greeting="Add some items to your list!" /> "index"
+ReactDOMRe.renderToElementWithId <App greeting="Welcome!" /> "index"
