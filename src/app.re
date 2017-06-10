@@ -1,8 +1,6 @@
 module App = {
   include ReactRe.Component.Stateful;
-  type props = {
-    greeting: string
-  };
+	type props = unit;
   type state = {
     currentInput: string,
     todos: list string
@@ -28,23 +26,26 @@ module App = {
       currentInput: (ReactDOMRe.domElementToObj (ReactEventRe.Form.target event))##value
     }
   };
-  let render {props, state, updater} => {
+  let render {state, updater} => {
     let { currentInput, todos } = state;
+		let hasTodos = List.length todos > 0;
+		let message = hasTodos ? "What else would you like to do?" : "What would you like to do?";
     <div>
-      <p>(ReactRe.stringToElement props.greeting)</p>
-      <form onSubmit=(updater handleSubmit)>
+      <form id="todoform" onSubmit=(updater handleSubmit)>
         <input
           _type="text"
-          placeholder="Add something to the list"
+					id="newtodo"
+					autoComplete="off"
+          placeholder={message}
           onChange=(updater handleInputChange)
           value={currentInput}
         />
       </form>
-      <ItemList items={todos} />
+      <TodoList items={todos} />
     </div>;
   }
 };
 
 include ReactRe.CreateComponent App;
 
-let createElement ::greeting => wrapProps {greeting: greeting};
+let createElement = wrapProps ()

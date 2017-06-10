@@ -11,7 +11,7 @@ module TodoList = {
         fun item =>
           <li>(ReactRe.stringToElement item)</li>
       );
-      <ul>
+      <ul id="todolist">
         (ReactRe.listToElement items)
       </ul>;
     };

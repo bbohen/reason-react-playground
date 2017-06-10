@@ -1,0 +1,95 @@
+/*
+	Will likely switch to some sort of css in js solution
+*/
+
+/* General */
+
+html {
+	background-color: #FFF;
+	font-family: 'PT Sans', sans-serif;
+}
+
+h1 {
+	border-bottom: 1px solid salmon;
+	color:salmon;
+	font-size: 3em;
+	margin: 0;
+	padding: 20px 0;
+}
+
+input {
+	box-sizing: border-box;
+	outline: none;
+	width: 100%;
+	padding: 20px;
+}
+
+#index {
+	width: 80%;
+	margin: auto;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	color: slategray;
+	font-size: 2em;
+}
+
+/* Todolist stuff */
+
+form#todoform {
+	font-size: 2em;
+	margin: 40px 0;
+}
+
+input#newtodo {
+	color: salmon;
+	padding: 20px 0;
+	border: none;
+	border-bottom: 2px solid salmon;
+}
+
+ul#todolist li {
+	margin-bottom: 10px;
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: .25s;
+}
+
+/* yuck, TODO: post-css */
+input#newtodo::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:salmon;
+}
+input#newtodo:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:salmon;
+   opacity: 1;
+}
+input#newtodo::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:salmon;
+   opacity: 1;
+}
+input#newtodo:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:salmon;
+}
+input#newtodo::-ms-input-placeholder { /* Microsoft Edge */
+   color:salmon;
+}
+
+/* Keyframes */
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
