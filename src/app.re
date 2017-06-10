@@ -9,12 +9,13 @@ module App = {
   let getInitialState _props => {
     {
       currentInput: "",
-      todos: []
+      todos: Persist.loadLocally "todos"
     }
   };
   let handleSubmit {state} event => {
     ReactEventRe.Form.preventDefault event;
     let todos = state.todos @ [state.currentInput];
+		Persist.saveLocally todos "todos";
     Some {
       currentInput: "",
       todos
