@@ -55,12 +55,22 @@ input#newtodo {
 }
 
 ul#todolist li {
+	cursor: pointer;
 	margin-bottom: 10px;
 	opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
 	animation-duration: .25s;
+	-o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+ul#todolist li:hover {
+	color: salmon;
 }
 
 /* yuck, TODO: post-css */
@@ -91,5 +101,3 @@ input#newtodo::-ms-input-placeholder { /* Microsoft Edge */
 		opacity: 1;
 	}
 }
-
-

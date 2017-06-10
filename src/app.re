@@ -2,13 +2,16 @@ module App = {
   include ReactRe.Component.Stateful;
 	type props = unit;
   type state = {
-    currentInput: string,
-    todos: list string
+    currentInput: TodoList.todo,
+    todos: list TodoList.todo
   };
   let name = "App";
   let getInitialState _props => {
     {
-      currentInput: "",
+      currentInput: {
+				id: "",
+				name: ""
+			},
       todos: Persist.loadLocally "todos"
     }
   };
@@ -17,14 +20,20 @@ module App = {
     let todos = state.todos @ [state.currentInput];
 		Persist.saveLocally todos "todos";
     Some {
-      currentInput: "",
+      currentInput: {
+				id: ("id-" ^ string_of_int ((List.length state.todos) + 1)),
+				name: ""
+			},
       todos
     }
   };
   let handleInputChange {state} event => {
     Some {
       ...state,
-      currentInput: (ReactDOMRe.domElementToObj (ReactEventRe.Form.target event))##value
+			currentInput: {
+				id: "id-" ^ string_of_int ((List.length state.todos) + 1),
+				name: (ReactDOMRe.domElementToObj (ReactEventRe.Form.target event))##value
+			}
     }
   };
   let render {state, updater} => {
@@ -39,7 +48,7 @@ module App = {
 					autoComplete="off"
           placeholder={message}
           onChange=(updater handleInputChange)
-          value={currentInput}
+          value={currentInput.name}
         />
       </form>
       <TodoList items={todos} />

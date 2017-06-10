@@ -1,7 +1,9 @@
+type todo = {id: string, name: string};
+
 module TodoList = {
   include ReactRe.Component;
   type props = {
-    items: list string
+    items: list todo
   };
   let name = "TodoList";
   let render {props} => {
@@ -9,7 +11,9 @@ module TodoList = {
       props.items |>
       List.map (
         fun item =>
-          <li>(ReactRe.stringToElement item)</li>
+          <li key={item.id}>
+						(ReactRe.stringToElement item.name)
+					</li>
       );
       <ul id="todolist">
         (ReactRe.listToElement items)
