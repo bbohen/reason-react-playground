@@ -9,6 +9,6 @@
     ],
     "sources": [{
         "dir": "src",
-				"subdirs": ["components", "util"]
+				"subdirs": ["components", "containers", "util"]
     }]
 }
