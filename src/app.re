@@ -3,16 +3,19 @@ module App = {
 	type props = unit;
   type state = {
     currentInput: TodoList.todo,
-    todos: list TodoList.todo
+    todos: list TodoList.todo,
+		totalTodoCount: int
   };
   let name = "App";
   let getInitialState _props => {
+		let todos = Persist.loadLocally "todos";
     {
       currentInput: {
 				id: "",
 				name: ""
 			},
-      todos: Persist.loadLocally "todos"
+      todos,
+			totalTodoCount: List.length todos
     }
   };
   let handleSubmit {state} event => {
@@ -21,10 +24,11 @@ module App = {
 		Persist.saveLocally todos "todos";
     Some {
       currentInput: {
-				id: ("id-" ^ string_of_int ((List.length state.todos) + 1)),
+				id: ("id-" ^ string_of_int state.totalTodoCount),
 				name: ""
 			},
-      todos
+      todos,
+			totalTodoCount: state.totalTodoCount + 1
     }
   };
 	let handleTodoClick {state} todoId => {
@@ -39,7 +43,7 @@ module App = {
     Some {
       ...state,
 			currentInput: {
-				id: "id-" ^ string_of_int ((List.length state.todos) + 1),
+				id: "id-" ^ string_of_int state.totalTodoCount,
 				name: (ReactDOMRe.domElementToObj (ReactEventRe.Form.target event))##value
 			}
     }
