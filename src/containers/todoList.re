@@ -1,5 +1,5 @@
 module TodoList = {
-  include ReactRe.Component.Stateful;
+	include ReactRe.Component.Stateful;
 	type props = unit;
   type state = {
     currentInput: ListView.listItem,
