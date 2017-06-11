@@ -24,7 +24,7 @@ module App = {
 		Persist.saveLocally todos "todos";
     Some {
       currentInput: {
-				id: ("id-" ^ string_of_int state.totalTodoCount),
+				id: "",
 				name: ""
 			},
       todos,
