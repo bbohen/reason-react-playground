@@ -3,7 +3,8 @@ type todo = {id: string, name: string};
 module TodoList = {
   include ReactRe.Component;
   type props = {
-    items: list todo
+    items: list todo,
+		onTodoClick: string => unit
   };
   let name = "TodoList";
   let render {props} => {
@@ -11,7 +12,7 @@ module TodoList = {
       props.items |>
       List.map (
         fun item =>
-          <li key={item.id}>
+          <li onClick={fun _ => props.onTodoClick (item.id)} key={item.id}>
 						(ReactRe.stringToElement item.name)
 					</li>
       );
@@ -23,4 +24,4 @@ module TodoList = {
 
 include ReactRe.CreateComponent TodoList;
 
-let createElement ::items => wrapProps{items: items}
+let createElement ::items ::onTodoClick => wrapProps{items: items, onTodoClick: onTodoClick}

@@ -27,6 +27,14 @@ module App = {
       todos
     }
   };
+	let handleTodoClick {state} todoId => {
+		let todos = List.filter (fun todo => not (TodoList.(todo.id) === todoId)) state.todos;
+		Persist.saveLocally todos "todos";
+		Some {
+			...state,
+			todos
+		}
+	};
   let handleInputChange {state} event => {
     Some {
       ...state,
@@ -51,7 +59,7 @@ module App = {
           value={currentInput.name}
         />
       </form>
-      <TodoList items={todos} />
+      <TodoList onTodoClick={updater handleTodoClick} items={todos} />
     </div>;
   }
 };
