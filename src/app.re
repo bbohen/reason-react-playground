@@ -2,8 +2,8 @@ module App = {
   include ReactRe.Component.Stateful;
 	type props = unit;
   type state = {
-    currentInput: TodoList.todo,
-    todos: list TodoList.todo,
+    currentInput: ListView.listItem,
+    todos: list ListView.listItem,
 		totalTodoCount: int
   };
   let name = "App";
@@ -32,7 +32,7 @@ module App = {
     }
   };
 	let handleTodoClick {state} todoId => {
-		let todos = List.filter (fun todo => not (TodoList.(todo.id) === todoId)) state.todos;
+		let todos = List.filter (fun todo => not (ListView.(todo.id) === todoId)) state.todos;
 		Persist.saveLocally todos "todos";
 		Some {
 			...state,
@@ -63,7 +63,7 @@ module App = {
           value={currentInput.name}
         />
       </form>
-      <TodoList onTodoClick={updater handleTodoClick} items={todos} />
+      <ListView onItemClick={updater handleTodoClick} items={todos} />
     </div>;
   }
 };

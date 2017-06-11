@@ -40,21 +40,7 @@ li {
 	font-size: 2em;
 }
 
-/* Todolist stuff */
-
-form#todoform {
-	font-size: 2em;
-	margin: 40px 0;
-}
-
-input#newtodo {
-	color: salmon;
-	padding: 20px 0;
-	border: none;
-	border-bottom: 2px solid salmon;
-}
-
-ul#todolist li {
+ul#list li {
 	cursor: pointer;
 	margin-bottom: 10px;
 	opacity: 1;
@@ -69,8 +55,22 @@ ul#todolist li {
   transition:.5s;
 }
 
-ul#todolist li:hover {
+ul#list li:hover {
 	color: salmon;
+}
+
+/* Todolist specific */
+
+form#todoform {
+	font-size: 2em;
+	margin: 40px 0;
+}
+
+input#newtodo {
+	color: salmon;
+	padding: 20px 0;
+	border: none;
+	border-bottom: 2px solid salmon;
 }
 
 /* yuck, TODO: post-css */
