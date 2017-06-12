@@ -9,12 +9,36 @@ html {
 	font-family: 'PT Sans', sans-serif;
 }
 
-h1 {
-	border-bottom: 1px solid salmon;
-	color:salmon;
-	font-size: 3em;
-	margin: 0;
+section {
+	width: 80%;
+	margin: auto;
+}
+
+nav {
+	background-color: salmon;
+	color: #FFF;
+}
+
+nav div {
+	font-size: 1em;
+	width: 80%;
+	margin: 0 auto;
 	padding: 20px 0;
+}
+
+.nav-item {
+	color: #FFF;
+	padding: 10px;
+	text-decoration: none;
+}
+
+.nav-item.active {
+	font-weight: bolder;
+	border-bottom: 10px solid #FFF;
+}
+
+.nav-item:first-of-type {
+	padding-left: 0;
 }
 
 input {
@@ -22,11 +46,6 @@ input {
 	outline: none;
 	width: 100%;
 	padding: 20px;
-}
-
-#index {
-	width: 80%;
-	margin: auto;
 }
 
 ul {

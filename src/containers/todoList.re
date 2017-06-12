@@ -15,7 +15,7 @@ module TodoList = {
 				name: ""
 			},
       todos,
-			totalTodoCount: List.length todos
+			totalTodoCount: List.length todos + 1
     }
   };
   let handleSubmit {state} event => {

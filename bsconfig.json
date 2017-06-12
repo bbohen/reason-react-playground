@@ -5,7 +5,8 @@
         "react-jsx": true
     },
     "bs-dependencies": [
-        "reason-react"
+        "reason-react",
+				"bs-director"
     ],
     "sources": [{
         "dir": "src",
