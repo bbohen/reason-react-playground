@@ -1,20 +1,13 @@
-module NavItem = {
-	include ReactRe.Component;
-	type props = {
-		isActive: bool,
-		route: string
-	};
-	let name = "NavItem";
-	let render {props} => {
-		let className = props.isActive ? "nav-item active" : "nav-item";
+let component = ReasonReact.statelessComponent "NavItem";
+let make ::isActive ::route _children => {
+	...component,
+	render: fun _state _self => {
+		let className = isActive ? "nav-item active" : "nav-item";
 		<a
 			className={className}
-			href={"#/" ^ props.route}>
-			(ReactRe.stringToElement props.route)
+			href={"#/" ^ route}
+		>
+			(ReactRe.stringToElement route)
 		</a>
 	}
 };
-
-include ReactRe.CreateComponent NavItem;
-
-let createElement ::isActive ::route => wrapProps{isActive: isActive, route: route}

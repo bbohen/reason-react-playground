@@ -1,32 +1,24 @@
-module App = {
-  include ReactRe.Component.Stateful;
-	type props = unit;
-	type state = {
-		route: string
-	};
-  let name = "App";
-	let getInitialState _props => {
-		route: "/"
-	};
-	let componentDidMount {updater} => {
-		let routeHandler _componentBag route => {
-			Some {route: route}
-		};
+type state = {
+	route: string
+};
+
+let component = ReasonReact.statefulComponent "App";
+let make _children => {
+	...component,
+	initialState: fun () => { route: "/" },
+	didMount: fun _state self => {
+		let routeHandler route _state _self => ReasonReact.Update {route: route};
 		let director = DirectorRe.makeRouter {
-			"/:wildcard": updater routeHandler
+			"/:wildcard": self.update routeHandler
 		};
 		DirectorRe.init director "/";
-		None
-	};
-  let render {state} =>
+		ReasonReact.NoUpdate;
+	},
+	render: fun {route} _self =>
 		<main>
-			<Navigation route={state.route} />
+			<Navigation route={route} />
 			<section>
-				<Router route={state.route} />
+				<Router route={route} />
 			</section>
 		</main>
 };
-
-include ReactRe.CreateComponent App;
-
-let createElement = wrapProps ()

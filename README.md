@@ -11,7 +11,7 @@ To get the app running in a development workflow
 3. `cd reason-react-playground`
 4. `npm install`
 5. `npm start` - Starts the [bucklescript](http://bloomberg.github.io/bucklescript/Manual.html) platform in watch mode. This will take your OCaml/Reason code and build dependencies and a lib that will also be compiled to javascript.
-6. In a seperate tab/instance `npm run dev` - Starts and opens a webpack dev server that will watch for the compiled javascript and then bundle it for the web. HMR is enabled for live reloading of your bundle. 
+6. In a seperate tab/instance `npm run dev` - Starts and opens a webpack dev server that will watch for the compiled javascript and then bundle it for the web. HMR is enabled for live reloading.
 
 Other commands
 

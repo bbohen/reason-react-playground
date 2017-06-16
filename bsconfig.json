@@ -2,11 +2,12 @@
 {
     "name": "reason-react-playground",
     "reason": {
-        "react-jsx": true
+        "react-jsx": 2
     },
     "bs-dependencies": [
         "reason-react",
-				"bs-director"
+				"bs-director",
+				"bs-fetch"
     ],
     "sources": [{
         "dir": "src",

@@ -1,19 +1,12 @@
-module Navigation = {
-  include ReactRe.Component;
-	type props = {
-		route: string
-	};
-  let name = "Navigation";
-  let render {props} =>
+let component = ReasonReact.statelessComponent "Navigation";
+let make ::route _children => {
+	...component,
+	render: fun _state _self =>
 		<nav>
 			<div>
-				<NavItem route="todos" isActive={props.route === "todos"} />
+				<NavItem route="todos" isActive={route === "todos"} />
 				(ReactRe.stringToElement " | ")
-				<NavItem route="hackernews" isActive={props.route === "hackernews"} />
+				<NavItem route="hackernews" isActive={route === "hackernews"} />
 			</div>
-		</nav>;
+		</nav>
 };
-
-include ReactRe.CreateComponent Navigation;
-
-let createElement ::route => wrapProps{route: route};
