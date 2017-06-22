@@ -13,8 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "bs-platform": "^1.7.5",
-    "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
   },
   "dependencies": {
     "bs-director": "github:buckletypes/bs-director",
