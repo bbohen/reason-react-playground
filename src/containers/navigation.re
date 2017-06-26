@@ -6,7 +6,7 @@ let make ::route _children => {
 			<div>
 				<NavItem route="todos" isActive={route === "todos"} />
 				(ReactRe.stringToElement " | ")
-				<NavItem route="hackernews" isActive={route === "hackernews"} />
+				<NavItem route="reddit" isActive={route === "reddit"} />
 			</div>
 		</nav>
 };

@@ -17,8 +17,10 @@
     "webpack-dev-server": "^2.5.0"
   },
   "dependencies": {
-    "bs-director": "github:buckletypes/bs-director",
+    "bs-director": "0.0.2",
     "bs-fetch": "^0.1.1",
+    "bs-json": "^0.1.0",
+    "bs-json-util": "^2.0.0",
     "normalize.css": "^7.0.0",
     "react": "^15.6.0",
     "react-dom": "^15.6.0",

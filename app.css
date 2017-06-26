@@ -11,7 +11,7 @@ html {
 
 section {
 	width: 80%;
-	margin: auto;
+	margin: 40px auto 0;
 }
 
 nav {
@@ -24,6 +24,10 @@ nav div {
 	width: 80%;
 	margin: 0 auto;
 	padding: 20px 0;
+}
+
+h1 {
+	color: salmon;
 }
 
 .nav-item {
@@ -82,7 +86,7 @@ ul#list li:hover {
 
 form#todoform {
 	font-size: 2em;
-	margin: 40px 0;
+	margin-bottom: 40px;
 }
 
 input#newtodo {
