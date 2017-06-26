@@ -5,14 +5,12 @@ let make ::posts _children => {
 	let itemsToRender =
 		posts |>
 		Array.map (
-			fun (postItem: RedditData.post) =>{
-				Js.log(postItem);
+			fun (postItem: RedditData.post) =>
 				<li
 					key={postItem.data.id}
 				>
 					(ReactRe.stringToElement postItem.data.title)
 				</li>
-			}
 		);
 	<div>
 		<h1>(ReactRe.stringToElement "r/reasonml")</h1>
