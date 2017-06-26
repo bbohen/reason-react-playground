@@ -9,7 +9,12 @@ let make ::posts _children => {
 				<li
 					key={postItem.data.id}
 				>
-					(ReactRe.stringToElement postItem.data.title)
+					<a
+						href={postItem.data.url}
+						target="_blank"
+					>
+						(ReactRe.stringToElement postItem.data.title)
+					</a>
 				</li>
 		);
 	<div>

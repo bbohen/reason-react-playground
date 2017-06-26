@@ -1,6 +1,7 @@
 type postData = {
 	id: string,
-	title: string
+	title: string,
+	url: string
 };
 type post = {
 	data: postData
@@ -18,7 +19,8 @@ type response = {
 
 let parseRedditPostData json: postData => Json.Decode.{
 	id: json |> field "id" string,
-	title: json |> field "title" string
+	title: json |> field "title" string,
+	url: json |> field "url" string
 };
 let parseRedditPost json: post => Json.Decode.{
 	data: json |> field "data" parseRedditPostData
