@@ -11,7 +11,7 @@ let make _children => {
       ReasonReact.Update {...state, redditPosts: response.data.children};
     let director = DirectorRe.makeRouter {"/:wildcard": self.update routeHandler};
     DirectorRe.init director "/";
-    RedditData.fetchRedditPosts (self.update updateRedditPosts);
+    ignore (RedditData.fetchRedditPosts (self.update updateRedditPosts));
     ReasonReact.NoUpdate
   },
   render: fun {redditPosts, route} _self =>
