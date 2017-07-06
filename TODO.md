@@ -1,9 +1,9 @@
-- [?] refmt usage?
 - [bug] reddit tab will not work until data is loaded
 - [bug] difficult but possible to creat a dupe key in todo list
-- [feature] better UX on the reddit tab
+- [feature] better UX within the reddit tab
 	- layout
 	- choose a subreddit
 	- pagination?
 - [debt] component/container structure doesn't really make sense at the moment
+- [debt] webpack config is currently barebones
 - ... add more here
