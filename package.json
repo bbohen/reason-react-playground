@@ -17,7 +17,7 @@
     "webpack-dev-server": "^2.5.1"
   },
   "dependencies": {
-    "bs-director": "0.0.2",
+    "bs-director": "0.0.3",
     "bs-fetch": "^0.1.1",
     "bs-json": "^0.1.0",
     "normalize.css": "^7.0.0",
