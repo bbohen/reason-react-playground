@@ -12,9 +12,9 @@
   "author": "Brad Bohen",
   "license": "ISC",
   "devDependencies": {
-    "bs-platform": "^1.8.0",
-    "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.5.0"
+    "bs-platform": "^1.8.1",
+    "webpack": "^3.1.0",
+    "webpack-dev-server": "^2.5.1"
   },
   "dependencies": {
     "bs-director": "0.0.2",
@@ -23,6 +23,6 @@
     "normalize.css": "^7.0.0",
     "react": "^15.6.0",
     "react-dom": "^15.6.0",
-    "reason-react": "^0.2.1"
+    "reason-react": "^0.2.3"
   }
 }
