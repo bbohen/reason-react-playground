@@ -1,9 +1,13 @@
-type state = {currentInput: ListView.listItem, todos: list ListView.listItem, totalTodoCount: int};
+type state = {
+  currentInput: ListView.listItem,
+  todos: list ListView.listItem,
+  totalTodoCount: int
+};
 
 let component = ReasonReact.statefulComponent "TodoList";
 
 let make _children => {
-  let submit event state _self => {
+  let submit event {ReasonReact.state: state} => {
     ReactEventRe.Form.preventDefault event;
     let todos = state.todos @ [state.currentInput];
     Persist.saveLocally todos "todos";
@@ -13,12 +17,12 @@ let make _children => {
       totalTodoCount: state.totalTodoCount + 1
     }
   };
-  let click todoId state _self => {
+  let click todoId {ReasonReact.state: state} => {
     let todos = List.filter (fun todo => not (ListView.(todo.id) === todoId)) state.todos;
     Persist.saveLocally todos "todos";
     ReasonReact.Update {...state, todos}
   };
-  let change event state _self =>
+  let change event {ReasonReact.state: state} =>
     ReasonReact.Update {
       ...state,
       currentInput: {
@@ -32,8 +36,8 @@ let make _children => {
       let todos = Persist.loadLocally "todos";
       {currentInput: {id: "", name: ""}, todos, totalTodoCount: List.length todos + 1}
     },
-    render: fun state self => {
-      let {currentInput, todos} = state;
+    render: fun self => {
+      let {currentInput, todos} = self.state;
       let hasTodos = List.length todos > 0;
       let message = hasTodos ? "What else would you like to do?" : "What would you like to do?";
       <div>

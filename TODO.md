@@ -4,6 +4,7 @@
 	- layout
 	- choose a subreddit
 	- pagination?
+- [debt] merlin/reason throws ocaml syntax errors in vscode
 - [debt] component/container structure doesn't really make sense at the moment
 - [debt] webpack config is currently barebones
 - ... add more here

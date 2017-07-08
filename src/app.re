@@ -1,19 +1,24 @@
-type state = {redditPosts: array RedditData.post, route: string};
+type state = {
+  redditPosts: array RedditData.post,
+  route: string
+};
 
 let component = ReasonReact.statefulComponent "App";
 
 let make _children => {
   ...component,
   initialState: fun () => {redditPosts: [||], route: "/"},
-  didMount: fun _state self => {
-    let routeHandler route state _self => ReasonReact.Update {...state, route};
-    let updateRedditPosts (response: RedditData.response) state _self =>
+  didMount: fun {update} => {
+    let routeHandler route {ReasonReact.state: state} => ReasonReact.Update {...state, route};
+    let updateRedditPosts (response: RedditData.response) {ReasonReact.state: state} =>
       ReasonReact.Update {...state, redditPosts: response.data.children};
-    let director = DirectorRe.makeRouter {"/:wildcard": self.update routeHandler};
+    let director = DirectorRe.makeRouter {"/:wildcard": update routeHandler};
     DirectorRe.init director "/";
-    ignore (RedditData.fetchRedditPosts (self.update updateRedditPosts));
+    ignore (RedditData.fetchRedditPosts (update updateRedditPosts));
     ReasonReact.NoUpdate
   },
-  render: fun {redditPosts, route} _self =>
+  render: fun self => {
+    let {redditPosts, route} = self.state;
     <main> <Navigation route /> <section> <Router redditPosts route /> </section> </main>
+  }
 };

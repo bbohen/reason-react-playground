@@ -2,8 +2,8 @@ let component = ReasonReact.statelessComponent "NavItem";
 
 let make ::isActive ::route _children => {
   ...component,
-  render: fun _state _self => {
+  render: fun _self => {
     let className = isActive ? "nav-item active" : "nav-item";
-    <a className href=("#/" ^ route)> (ReactRe.stringToElement route) </a>
+    <a className href=("#/" ^ route)> (ReasonReact.stringToElement route) </a>
   }
 };
