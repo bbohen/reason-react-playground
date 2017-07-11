@@ -1,4 +1,14 @@
-type postData = {id: string, title: string, url: string};
+type postData = {
+  author: string,
+  comment_count: int,
+  downvotes: int,
+  id: string,
+  permalink: string,
+  thumbnail: string,
+  title: string,
+  upvotes: int,
+  url: string
+};
 
 type post = {data: postData};
 
@@ -13,8 +23,14 @@ type response = {data: responseData, kind: string};
 
 let parseRedditPostData json :postData =>
   Json.Decode.{
+    author: json |> field "author" string,
+    comment_count: json |> field "num_comments" int,
+    downvotes: json |> field "downs" int,
     id: json |> field "id" string,
+    permalink: json |> field "permalink" string,
     title: json |> field "title" string,
+    upvotes: json |> field "ups" int,
+    thumbnail: json |> field "thumbnail" string,
     url: json |> field "url" string
   };
 

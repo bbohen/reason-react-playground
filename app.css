@@ -3,7 +3,6 @@
 */
 
 /* General */
-
 html {
 	background-color: #FFF;
 	font-family: 'PT Sans', sans-serif;
@@ -83,12 +82,19 @@ ul#list li {
   transition:.5s;
 }
 
-ul#list li:hover {
+ul#list li:hover, ul#list li:hover a{
 	color: salmon;
 }
 
-/* Todolist specific */
+ul#list li img {
+	background-color: salmon;
+	height: 50px;
+	width: 50px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
 
+/* Todolist specific */
 form#todoform {
 	font-size: 2em;
 	margin-bottom: 40px;
@@ -99,6 +105,38 @@ input#newtodo {
 	padding: 20px 0;
 	border: none;
 	border-bottom: 2px solid salmon;
+}
+
+/* Reddit posts */
+ul#list.reddit li {
+	font-size: 1em;
+	margin-bottom: 20px;
+	padding: 10px;
+	background-color: #fafafa;
+}
+
+ul#list.reddit li:hover {
+	background-color: #ffffff;
+}
+
+ul#list.reddit li span {
+	display: block;
+}
+
+ul#list li:hover, ul#list li:hover a{
+	color: slategray;
+}
+
+ ul#list li a:hover {
+	 color: salmon;
+ }
+
+ul#list.reddit li div:first-of-type a {
+	display: flex;
+}
+
+ul#list.reddit li div:first-of-type a span:first-of-type {
+	font-weight: bolder;
 }
 
 /* yuck, TODO: post-css */
