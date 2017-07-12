@@ -67,6 +67,7 @@ li {
 	font-size: 2em;
 }
 
+/* Todo list  */
 ul#list li {
 	cursor: pointer;
 	margin-bottom: 10px;
@@ -123,11 +124,11 @@ ul#list.reddit li span {
 	display: block;
 }
 
-ul#list li:hover, ul#list li:hover a{
+ul#list.reddit li:hover, ul#list.reddit li:hover a{
 	color: slategray;
 }
 
- ul#list li a:hover {
+ ul#list.reddit li a:hover {
 	 color: salmon;
  }
 
