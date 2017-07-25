@@ -1,7 +1,4 @@
-type listItem = {
-  id: string,
-  name: string
-};
+type listItem = {id: int, name: string};
 
 let component = ReasonReact.statelessComponent "ListView";
 
@@ -12,7 +9,7 @@ let make ::items ::onItemClick _children => {
       items |>
       List.map (
         fun item =>
-          <li onClick=(fun _ => onItemClick item.id) key=item.id>
+          <li onClick=(fun _ => onItemClick item.id) key=(string_of_int item.id)>
             (ReasonReact.stringToElement item.name)
           </li>
       );
